@@ -1,0 +1,793 @@
+{
+	"info": {
+		"_postman_id": "fe77e879-4340-4779-b8b1-cda387881acd",
+		"name": "e-commerce-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30073030"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"jefri\",\n    \"email\" : \"jefri@gmail.com\",\n    \"password\" : \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailOrPhone\": \"jefri@mail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "E commerce home page",
+			"item": [
+				{
+					"name": "Get Banners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/banners",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"banners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Best selling Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/best-selling-products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"best-selling-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Promo weekly",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"discount_start_date\": \"2024-11-01T00:00:00Z\",\n    \"discount_end_date\": \"2024-11-07T23:59:59Z\",\n    \"discount_percentage\": 20,\n    \"is_promo\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/product/223e4567-e89b-12d3-a456-426614174001/promo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"product",
+								"223e4567-e89b-12d3-a456-426614174001",
+								"promo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recommends",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/recommendations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"recommendations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1MjgxNjEsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.PqEoO5Ifngj4jjAKbtjyB3QRWD76wvpEuc9xU8bVgcs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1MjcxNTIsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.tlGZnSrn4EcUelNWOJclGoV2m9fXUP8TOdn7bVBwC6Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"123e4567-e89b-12d3-a456-426614174000\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1Mjk0MjIsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.IpVJa8QnpTxe2IcAW5IwyoRo4mtU-dN11foytEGONu0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/wishlist-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"wishlist-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1Mjk0MjIsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.IpVJa8QnpTxe2IcAW5IwyoRo4mtU-dN11foytEGONu0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/Home-page/wishlist/123e4567-e89b-12d3-a456-426614174000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"Home-page",
+								"wishlist",
+								"123e4567-e89b-12d3-a456-426614174000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home Page All Products",
+			"item": [
+				{
+					"name": "Get products by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/all-product?name=laptop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"all-product"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "laptop"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\" : \"123e4567-e89b-12d3-a456-426614174000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/all-product/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"all-product",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product By Category",
+			"item": [
+				{
+					"name": "Get All Products By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/product-by-category/?category_id=223e4567-e89b-12d3-a456-426614174001&page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"product-by-category",
+								""
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "223e4567-e89b-12d3-a456-426614174001"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkout Flow",
+			"item": [
+				{
+					"name": "Get list cart",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"cart_id\": \"f5d749d3-1f10-43a2-87bc-ca61d04b4e24\",\n     \"quantity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/checkout/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"checkout",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cart_id\" : \"e979eb11-d827-4bad-b8a9-a5c642d3fda5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/checkout/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"checkout",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1NDcxMzAsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.Nv-qC6z3WmGMlLHCUZm93VPufaRWmKQICQ2N0q9lob8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/checkout/product-detail?id=123e4567-e89b-12d3-a456-426614174000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"checkout",
+								"product-detail"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "123e4567-e89b-12d3-a456-426614174000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1NDkwOTgsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.hZvpLsfwguxGoA5R6gC9fq4WnpKIHuRE-Ld9OsDJhdY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_method\": \"credit_card\",\n    \"order_items\": [\n        {\"product_id\": \"123e4567-e89b-12d3-a456-426614174000\", \"price\": 10.0, \"quantity\": 2},\n        {\"product_id\": \"240fe375-c0cd-4b67-8530-8d8a2def847e\", \"price\": 5.0, \"quantity\": 1}\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/checkout/add-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"checkout",
+								"add-orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account Address",
+			"item": [
+				{
+					"name": "Create address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1NTA5MTEsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.GTOKl58co0-HIdk1CRSyfCj1SC2LQf8wBMPKVn3Q9Ws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"street\": \"Jl. Merdeka No. 123\",\n  \"city\": \"Jakarta\",\n  \"province\": \"DKI Jakarta\",\n  \"country\": \"Indonesia\",\n  \"default\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/account/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"account",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1NTA5MTEsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.GTOKl58co0-HIdk1CRSyfCj1SC2LQf8wBMPKVn3Q9Ws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/account/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"account",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1NTA5MTEsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.GTOKl58co0-HIdk1CRSyfCj1SC2LQf8wBMPKVn3Q9Ws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"street\": \"Jl. Merdeka No. 124\",\n  \"city\": \"Bandung\",\n  \"province\": \"Jawa Barat\",\n  \"country\": \"Indonesia\",\n  \"default\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/account/addresses/1629f889-26f9-4e0a-a463-1928b26e9d24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"account",
+								"addresses",
+								"1629f889-26f9-4e0a-a463-1928b26e9d24"
+							],
+							"query": [
+								{
+									"key": "address_id",
+									"value": "1629f889-26f9-4e0a-a463-1928b26e9d24",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1NTA5MTEsInVzZXJfaWQiOiI1NDMyOWRmMi05Mjg3LTRlMDQtYjFlOS1kYmY2MDk2NmYzMjgifQ.GTOKl58co0-HIdk1CRSyfCj1SC2LQf8wBMPKVn3Q9Ws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/e-commerce/account/addresses/1629f889-26f9-4e0a-a463-1928b26e9d24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"e-commerce",
+								"account",
+								"addresses",
+								"1629f889-26f9-4e0a-a463-1928b26e9d24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
